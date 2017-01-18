@@ -3,7 +3,7 @@
  Plugin Name: WP Email or Username Login
  Plugin URI:
  Description: Allows users to login by their username or email.
- Version: 0.1.0
+ Version: 0.1.1
  Author: Erik Mitchell
  Author URI: http://erikmitchell.net
  License: GPLv2 or later
@@ -17,7 +17,7 @@
  * @param  string $password [description]
  * @return boolean
  */
-function em_allow_email_login($user,$username,$password) {
+function em_allow_email_login($user, $username, $password) {
 	if (is_email($username)) :
 		$user=get_user_by_email($username);
 		if ($user) :
@@ -25,9 +25,9 @@ function em_allow_email_login($user,$username,$password) {
 		endif;
 	endif;
 
-	return wp_authenticate_username_password(null,$username,$password);
+	return wp_authenticate_username_password(null, $username, $password);
 }
-add_filter('authenticate','em_allow_email_login',20,3);
+add_filter('authenticate', 'em_allow_email_login', 20, 3);
 
 
 /**
@@ -38,9 +38,9 @@ add_filter('authenticate','em_allow_email_login',20,3);
  */
 function em_add_email_to_login($translated_text,$text,$domain) {
 	if ("Username"==$translated_text) :
-		$translated_text.= __(' Or Email','ememaillogin');
+		$translated_text.= __(' Or Email', 'ememaillogin');
 	endif;
 
 	return $translated_text;
 }
-add_filter('gettext','em_add_email_to_login',20,3);
+add_filter('gettext', 'em_add_email_to_login', 20, 3);

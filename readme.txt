@@ -3,8 +3,8 @@ Contributors: erikdmitchell
 Donate link: erikdmitchell@gmail.com
 Tags: login, email, username
 Requires at least: 4.0
-Tested up to: 4.5.3
-Stable tag: 0.1.5
+Tested up to: 4.7.1
+Stable tag: 0.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,11 @@ Coming soon...
 Coming soon...
 
 == Changelog ==
+
+= 0.1.1 =
+
+* Minor code cleanup.
+* Check WP version compatability.
 
 = 0.1.0 =
 
